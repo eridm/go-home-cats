@@ -1,0 +1,57 @@
+
+/*
+.intro h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+*/
+
+#cats {
+    position: relative;
+  }
+  
+  .cat {
+    position: absolute;
+    /* 
+     * before the animation, --animation is 0. After, it's 1.
+     *   calc(x - (y * var(--animation)))
+     * can be read as "animate from x to (y-x)"
+     */
+    /* animate from `left: 50%` to `left: 0`" */
+    left: calc(50% - (50% * var(--animation)));
+    transform: translateX(-50%);
+    /* animate from `font-size: 6em` to `font-size: 1em` */
+    font-size: calc(6em - (5em * var(--animation)));
+    /* animate from `rotate(0)` to `rotate(-15deg)` */
+    transform: rotate(calc(-15deg * var(--animation)));
+  }
+  
+  #comet {
+    --animation: var(--first-animation);
+    bottom: -300px;
+  }
+  
+  #brutus {
+    bottom: -600px;
+    --animation: var(--second-animation) * var(--second-animation) *
+      var(--second-animation);
+  }
+  
+  #juswa {
+    bottom: -900px;
+    --animation: var(--third-animation);
+  }
+  
+  body {
+    height: 1800px;
+  }
+  
+  #house {
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 8em;
+    z-index: 1;
+    background: white;
+  }
