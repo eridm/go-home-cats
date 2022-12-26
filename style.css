@@ -10,14 +10,19 @@
 #cats {
     position: relative;
   }
-  
-  .cat {
-    position: absolute;
+
+img {
+  width: 10%;
+  height: 10%;
+}
+
+.cat {
+  position: absolute;
     /* 
-     * before the animation, --animation is 0. After, it's 1.
-     *   calc(x - (y * var(--animation)))
-     * can be read as "animate from x to (y-x)"
-     */
+      * before the animation, --animation is 0. After, it's 1.
+      *   calc(x - (y * var(--animation)))
+      * can be read as "animate from x to (y-x)"
+      */
     /* animate from `left: 50%` to `left: 0`" */
     left: calc(50% - (50% * var(--animation)));
     transform: translateX(-50%);
